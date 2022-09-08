@@ -15,12 +15,17 @@ a {
   box-sizing: border-box;
 }
 
+section {
+  margin-bottom: 100px;
+}
+
+/* used to detect if the user has requested a light or dark color theme */
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
   body {
     color: white;
-    background: black;
+    background: rgb(14, 16, 37);
   }
 }
