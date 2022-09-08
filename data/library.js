@@ -1,14 +1,14 @@
 export const libData = {
   books: [
-    {
-      title: "Popisho",
-      id: null,
-      author: "Leone Ross",
-      link: "https://openlibrary.org/works/OL20849886W",
-      image: "https://covers.openlibrary.org/b/olid/OL28229066M-L.jpg",
-      date_finished: "In progress",
-      notes: null,
-    },
+    // {
+    //   title: "Popisho",
+    //   id: null,
+    //   author: "Leone Ross",
+    //   link: "https://openlibrary.org/works/OL20849886W",
+    //   image: "https://covers.openlibrary.org/b/olid/OL28229066M-L.jpg",
+    //   date_finished: "In progress",
+    //   notes: null,
+    // },
     {
       title: "The Book of Form and Emptiness",
       id: null,
