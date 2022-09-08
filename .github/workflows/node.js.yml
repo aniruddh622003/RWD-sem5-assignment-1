@@ -18,16 +18,17 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
+        cache: 'yarn'
       
 
     - name: Installing my packages
-      run: npm ci
+      run: yarn install --frozen-lockfile
 
     - name: Build my App  
-      run: npm run build
+      run: yarn build
       env:
         NEXT_PUBLIC_BASE_PATH: /RWD-sem5-assignment-1
     - run: touch ./out/.nojekyll
