@@ -57,16 +57,18 @@ const index = ({ books }) => {
           <div className={styles.book_list_cont}>
             {books.map((ele, idx) => (
               <div className={styles.book_list_item} key={`book-${idx}`}>
-                <img
-                  src={
-                    ele.image ??
-                    "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"
-                  }
-                  style={{
-                    margin: ele.image ? "0" : "100px 0",
-                    boxShadow: !ele.image && "none",
-                  }}
-                />
+                <a href={`/library/${idx}`}>
+                  <img
+                    src={
+                      ele.image ??
+                      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"
+                    }
+                    style={{
+                      margin: ele.image ? "0" : "100px 0",
+                      boxShadow: !ele.image && "none",
+                    }}
+                  />
+                </a>
                 <div className={styles.details}>
                   <h3>{ele.title}</h3>
                   <h5>{ele.author}</h5>

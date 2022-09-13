@@ -10,6 +10,20 @@
   color: black;
 }
 
+.bread_crumb {
+  padding: 50px 25px;
+  padding-bottom: 20px;
+}
+
+.bread_crumb a {
+  color: #aaa;
+  cursor: pointer;
+}
+
+.bread_crumb a:last-child {
+  color: black;
+}
+
 .book_list_cont {
   display: flex;
   flex-wrap: wrap;
@@ -60,6 +74,69 @@
   color: #aaa;
   font-size: 15px;
 }
+.single_book {
+  width: 100%;
+  padding: 10px 25px;
+  align-self: stretch;
+  position: relative;
+  padding-bottom: 50px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  display: flex;
+  gap: 50px;
+}
+
+.single_book img {
+  min-width: 30%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.493);
+  transition: 0.5s;
+}
+
+.single_book img:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.9);
+  transform: scale(1.02);
+
+  cursor: pointer;
+}
+
+.single_book .details {
+  /* position: absolute;
+  bottom: 40px; */
+}
+
+.single_book h3,
+.single_book h4,
+.single_book h5 {
+  margin: 0;
+  line-height: 1;
+  padding: 5px;
+}
+
+.single_book p,
+.single_book a {
+  margin: 0;
+  padding: 5px;
+}
+
+.single_book a {
+  background-color: rgb(67, 188, 11);
+  margin-left: 5px;
+  margin-top: 30px;
+  display: inline-block;
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+}
+
+.single_book h3 {
+  font-size: 30px;
+  padding-bottom: 10px;
+}
+
+.single_book h5 {
+  color: #aaa;
+  font-size: 15px;
+}
 
 @media (max-width: 768px) {
   .cont {
@@ -67,6 +144,11 @@
   }
   .book_list_item {
     width: 50%;
+    padding-bottom: 200px;
+  }
+  .single_book {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -76,5 +158,6 @@
   }
   .book_list_item {
     width: 100%;
+    padding-bottom: 150px;
   }
 }
