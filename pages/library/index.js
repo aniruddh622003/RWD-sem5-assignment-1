@@ -1,9 +1,9 @@
 import React from "react";
-import { libData } from "../../data/library";
+import library from "../../data/library";
 import styles from "../../styles/Library.module.css";
 
 export async function getStaticProps() {
-  let allBookData = libData.books;
+  let allBookData = library.books;
   let imagebooks = allBookData.filter((ele) => ele.image != null);
   let noImagebooks = allBookData.filter((ele) => ele.image == null);
   return {

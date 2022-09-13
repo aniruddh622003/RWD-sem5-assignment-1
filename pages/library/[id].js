@@ -1,10 +1,22 @@
+import Link from "next/link";
 import React from "react";
-import { libData } from "../../data/library";
+import library from "../../data/library";
 import styles from "../../styles/Library.module.css";
 
+export const getStaticPaths = async () => {
+  const paths = library.books.map((ele, idx) => ({
+    params: { id: idx.toString() },
+  }));
+  return {
+    paths,
+    fallback: false,
+  };
+};
+
 export async function getStaticProps({ params }) {
-  let allBookData = libData.books;
-  let book = allBookData.filter((ele, idx) => idx == params.id);
+  console.log(`Building slug: ${params.id ?? "null"}`);
+  let allBookData = library.books;
+  let book = allBookData.filter((ele, idx) => idx == params?.id);
 
   return {
     props: {
@@ -13,21 +25,13 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export async function getStaticPaths() {
-  return {
-    paths: libData.books.map((ele, idx) => ({
-      params: { id: toString(idx) },
-    })),
-    fallback: true,
-  };
-}
-
 const SingleBook = ({ book }) => {
   return (
     <div className={styles.cont}>
       <div className={styles.inner}>
         <section className={styles.bread_crumb} style={{ marginBottom: 0 }}>
-          <a href="/library">Home</a> {">"} <a>{book && book[0].title}</a>
+          <Link href="/library">Home</Link> {">"}{" "}
+          <a>{book && Array.isArray(book) && book[0]?.title}</a>
         </section>
         <section style={{ marginBottom: 20 }}>
           <div className={styles.book_list_cont}>
@@ -44,17 +48,17 @@ const SingleBook = ({ book }) => {
                   }}
                 />
                 <div className={styles.details}>
-                  <h3>{ele.title}</h3>
-                  <h5>{ele.author}</h5>
-                  <h4>Date Finished: {ele.date_finished}</h4>
+                  <h3>{ele?.title}</h3>
+                  <h5>{ele?.author}</h5>
+                  <h4>Date Finished: {ele?.date_finished}</h4>
                   <br />
-                  {ele.notes && (
+                  {ele?.notes && (
                     <>
                       <h4>My reviews</h4>
-                      <p>{ele.notes}</p>
+                      <p>{ele?.notes}</p>
                     </>
                   )}
-                  <a href={ele.link} target="_blank" rel="noreferrer">
+                  <a href={ele?.link} target="_blank" rel="noreferrer">
                     Read the book
                   </a>
                 </div>

@@ -1,4 +1,4 @@
-export const libData = {
+const libData = {
   books: [
     {
       title: "Popisho",
@@ -707,3 +707,5 @@ export const libData = {
     },
   ],
 };
+
+export default libData;
