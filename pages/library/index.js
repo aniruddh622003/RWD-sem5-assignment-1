@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import library from "../../data/library";
 import styles from "../../styles/Library.module.css";
@@ -57,7 +58,7 @@ const index = ({ books }) => {
           <div className={styles.book_list_cont}>
             {books.map((ele, idx) => (
               <div className={styles.book_list_item} key={`book-${idx}`}>
-                <a href={`/library/${idx}`}>
+                <Link href={`/library/${idx}`}>
                   <img
                     src={
                       ele.image ??
@@ -68,7 +69,7 @@ const index = ({ books }) => {
                       boxShadow: !ele.image && "none",
                     }}
                   />
-                </a>
+                </Link>
                 <div className={styles.details}>
                   <h3>{ele.title}</h3>
                   <h5>{ele.author}</h5>
