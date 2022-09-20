@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Link from "next/link";
 import React from "react";
 import library from "../../data/library";
@@ -28,6 +29,13 @@ export async function getStaticProps({ params }) {
 const SingleBook = ({ book }) => {
   return (
     <div className={styles.cont}>
+      <Head>
+        <title>E-Library</title>
+        <meta
+          name="description"
+          content="Library website for RWD assignment 1"
+        />
+      </Head>
       <div className={styles.inner}>
         <section className={styles.bread_crumb} style={{ marginBottom: 0 }}>
           <Link href="/library">Home</Link> {">"}{" "}

@@ -44,8 +44,15 @@
   line-height: 1.15;
   font-size: 4rem;
 }
+.subtitle {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 2rem;
+  color: #0070f3;
+}
 
 .title,
+.subtitle,
 .description {
   text-align: center;
 }

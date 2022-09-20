@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Link from "next/link";
 import React from "react";
 import library from "../../data/library";
@@ -17,6 +18,13 @@ export async function getStaticProps() {
 const index = ({ books }) => {
   return (
     <div className={styles.cont}>
+      <Head>
+        <title>E-Library</title>
+        <meta
+          name="description"
+          content="Library website for RWD assignment 1"
+        />
+      </Head>
       <div className={styles.inner}>
         <section>
           <iframe
@@ -26,7 +34,7 @@ const index = ({ books }) => {
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
+            allowFullScreen
             style={{ marginTop: "30px" }}
           ></iframe>
           <center>
