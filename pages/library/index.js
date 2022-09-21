@@ -76,6 +76,7 @@ const index = ({ books }) => {
                       margin: ele.image ? "0" : "100px 0",
                       boxShadow: !ele.image && "none",
                     }}
+                    alt={ele.title}
                   />
                 </Link>
                 <div className={styles.details}>

@@ -54,6 +54,7 @@ const SingleBook = ({ book }) => {
                     margin: ele.image ? "0" : "100px 0",
                     boxShadow: !ele.image && "none",
                   }}
+                  alt={ele?.title}
                 />
                 <div className={styles.details}>
                   <h3>{ele?.title}</h3>
