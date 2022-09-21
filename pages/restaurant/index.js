@@ -51,7 +51,6 @@ const Restaurant = ({ menu }) => {
       <section className={styles.menu} id="menu">
         <h1>Menu</h1>
         <div className="container-fluid">
-          {console.log(menu)}
           <div className="row">
             {menu?.map((ele, id) => (
               <div key={`menu-item-${id}`} className="col-md-4">
